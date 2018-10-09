@@ -1,4 +1,4 @@
-var addressBook = [
+let addressBook = [
 	{
 	firstName:"dan",
 	lastName:"theman",
@@ -15,10 +15,10 @@ var addressBook = [
 
 
 function addContact(){
-	var first = document.getElementById("firstName").value;
-	var last = document.getElementById("lastName").value;
-	var cell = document.getElementById("cell").value;
-	var newContact = {firstName:first, lastName:last, cellNum:cell};
+	let first = document.getElementById("firstName").value;
+	let last = document.getElementById("lastName").value;
+	let cell = document.getElementById("cell").value;
+	let newContact = {firstName:first, lastName:last, cellNum:cell};
 	addressBook.push(newContact);
 	console.log(newContact);
 	document.getElementById("addText").textContent = 'Contact Added: ' +
@@ -28,10 +28,10 @@ function addContact(){
 }
 	
 function searchContacts(){
-	var first = document.getElementById("s-firstName").value;
-	var last = document.getElementById("s-lastName").value;
-	var searched =[];
-	for (var i = 0; i < addressBook.length; i++) {
+	let first = document.getElementById("s-firstName").value;
+	let last = document.getElementById("s-lastName").value;
+	let searched =[];
+	for (let i = 0; i < addressBook.length; i++) {
 		if(first.toLowerCase()===addressBook[i].firstName.toLowerCase() || 
 			last.toLowerCase()===addressBook[i].lastName.toLowerCase()){
 			console.log(addressBook[i]);
@@ -44,8 +44,8 @@ function searchContacts(){
     	document.forms[1].reset();
     	return;
 	} else {
-		var contacts ="";
-		for (var i = 0; i < searched.length; i++) {
+		let contacts ="";
+		for (let i = 0; i < searched.length; i++) {
 			contacts = contacts + searched[i].firstName + ' ' +
 			searched[i].lastName + ' - ' + searched[i].cellNum + "<br/>";
 		}	
